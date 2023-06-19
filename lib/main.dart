@@ -1,13 +1,10 @@
 //Importar el paquete de flutter
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(new MyApp());
-}
+//Importamos la clase para poder instanciarla
+import 'package:flutter_application_1/src/myApp.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(home: Center(child: Text('Hola Saúl')));
-  }
+void main() {
+  //No es necesario instanciar una clase con la palabra new (se puede omitir)
+  runApp(MyApp());
 }
