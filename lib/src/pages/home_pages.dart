@@ -11,9 +11,14 @@ class HomePage extends StatelessWidget {
       body: Center(child: Text('Texto Scaffold')),
       backgroundColor: Colors.blueGrey.shade200,
       floatingActionButton: FloatingActionButton(
-        onPressed: null,
+        onPressed:
+            setMessage, //Llamar al metodo sin parentesis para que no se ejecute inicialmente
         child: const Icon(Icons.add),
       ),
     );
+  }
+
+  setMessage() {
+    print('HOLA');
   }
 }
