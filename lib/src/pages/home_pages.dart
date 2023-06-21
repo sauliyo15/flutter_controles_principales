@@ -9,7 +9,11 @@ class HomePage extends StatelessWidget {
         title: Text('AppBar Sauliyo'),
       ),
       body: Center(child: Text('Texto Scaffold')),
-      backgroundColor: Colors.blueGrey.shade200,,
+      backgroundColor: Colors.blueGrey.shade200,
+      floatingActionButton: FloatingActionButton(
+        onPressed: null,
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
