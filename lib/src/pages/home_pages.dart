@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
         title: Text('AppBar Sauliyo'),
       ),
       body: Center(child: Text('Texto Scaffold')),
+      backgroundColor: Colors.blueGrey.shade200,,
     );
   }
 }
