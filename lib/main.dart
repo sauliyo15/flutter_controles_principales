@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 //Importamos la clase para poder instanciarla
 import 'package:flutter_application_1/src/myApp.dart';
+import 'package:flutter_application_1/src/myApp2.dart';
 
 void main() {
   //No es necesario instanciar una clase con la palabra new (se puede omitir)
-  runApp(MyApp());
+  runApp(MyApp2());
 }
