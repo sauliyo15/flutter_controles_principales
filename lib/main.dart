@@ -18,13 +18,17 @@ class MyApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) => Home(),
-        'alert': (BuildContext context) => AlertPage(),
-        'avatar': (BuildContext context) => AvatarPage(),
-      },
-    );
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: <String, WidgetBuilder>{
+          '/': (BuildContext context) => Home(),
+          'alert': (BuildContext context) => AlertPage(),
+          'avatar': (BuildContext context) => AvatarPage(),
+        },
+        //Controlar rutas no definidas redireccionamos donde queramos (AlertPage)
+        onGenerateRoute: (RouteSettings setting) {
+          return MaterialPageRoute(
+              builder: (BuildContext context) => AlertPage());
+        });
   }
 }
