@@ -8,6 +8,7 @@ import 'package:flutter_application_1/src/pages/alert_page.dart';
 import 'package:flutter_application_1/src/pages/avatar_page.dart';
 import 'package:flutter_application_1/src/pages/home.dart';
 import 'package:flutter_application_1/src/pages/listview.dart';
+import 'package:flutter_application_1/src/routes/routes.dart';
 
 void main() {
   //No es necesario instanciar una clase con la palabra new (se puede omitir)
@@ -20,11 +21,7 @@ class MyApplication extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
-        routes: <String, WidgetBuilder>{
-          '/': (BuildContext context) => Home(),
-          'alert': (BuildContext context) => AlertPage(),
-          'avatar': (BuildContext context) => AvatarPage(),
-        },
+        routes: getRoutes(),
         //Controlar rutas no definidas redireccionamos donde queramos (AlertPage)
         onGenerateRoute: (RouteSettings setting) {
           return MaterialPageRoute(
