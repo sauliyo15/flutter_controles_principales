@@ -16,7 +16,13 @@ class _InputPageState extends State<InputPage> {
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
-        children: <Widget>[_createInput()],
+        children: <Widget>[
+          _createInput(),
+          Divider(),
+          _createInputEmail(),
+          Divider(),
+          _createInputPassword()
+        ],
       ),
     );
   }
@@ -33,6 +39,36 @@ class _InputPageState extends State<InputPage> {
           helperText: 'Escriba solo su nombre',
           suffixIcon: Icon(Icons.accessibility),
           icon: Icon(Icons.account_circle)),
+    );
+  }
+
+  Widget _createInputEmail() {
+    return TextField(
+      keyboardType: TextInputType.emailAddress,
+      decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          hintText: 'Escriba su email aquí',
+          labelText: 'Email',
+          helperText: 'Escriba solo su email',
+          suffixIcon: Icon(Icons.alternate_email),
+          icon: Icon(Icons.email)),
+    );
+  }
+
+  Widget _createInputPassword() {
+    return TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          hintText: 'Escriba su contraseña',
+          labelText: 'Contraseña',
+          helperText: 'Escriba solo su contraseña',
+          suffixIcon: Icon(Icons.lock_open),
+          icon: Icon(Icons.lock)),
     );
   }
 }
