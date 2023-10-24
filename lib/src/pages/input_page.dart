@@ -10,6 +10,10 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   String _fecha = '';
   TextEditingController _textController = new TextEditingController();
+
+  String _opcionSeleccionada = 'Toyota';
+  List marcas = ['Toyota', 'Audi', 'Honda', 'Seat', 'Peugeot'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +30,8 @@ class _InputPageState extends State<InputPage> {
           _createInputPassword(),
           Divider(),
           _createInputDate(context),
+          Divider(),
+          _createDropDown(),
         ],
       ),
     );
@@ -110,5 +116,37 @@ class _InputPageState extends State<InputPage> {
         _textController.text = _fecha;
       });
     }
+  }
+
+  Widget _createDropDown() {
+    return Row(
+      children: <Widget>[
+        Icon(Icons.select_all),
+        SizedBox(
+          width: 30.0,
+        ),
+        Expanded(
+            child: DropdownButton(
+          value: _opcionSeleccionada,
+          items: getOptionsDropDown(),
+          onChanged: (value) {
+            setState(() {
+              _opcionSeleccionada = value!;
+            });
+          },
+        ))
+      ],
+    );
+  }
+
+  List<DropdownMenuItem<String>> getOptionsDropDown() {
+    List<DropdownMenuItem<String>> list = [];
+    marcas.forEach((element) {
+      list.add(DropdownMenuItem(
+        child: Text(element),
+        value: element,
+      ));
+    });
+    return list;
   }
 }
