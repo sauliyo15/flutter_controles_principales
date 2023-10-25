@@ -25,6 +25,11 @@
       "ruta": "slider",
       "icon": "tune",
       "texto": "Slider - cheks"
+    },
+    {
+      "ruta": "list",
+      "icon": "list",
+      "texto": "List - Scroll"
     }
   ]
 }

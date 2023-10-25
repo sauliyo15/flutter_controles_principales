@@ -5,7 +5,8 @@ final _setIcons = <String, IconData>{
   "accessibility": Icons.accessibility,
   "folder_open": Icons.folder_open,
   "input": Icons.input,
-  "tune": Icons.tune
+  "tune": Icons.tune,
+  "list": Icons.list
 };
 
 Icon getIcon(String nameIcon) {
