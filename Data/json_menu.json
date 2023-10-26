@@ -35,11 +35,6 @@
       "ruta": "floating_button",
       "icon": "floating",
       "texto": "Floating Button"
-    },
-    {
-      "ruta": "second_list",
-      "icon": "second_list",
-      "texto": "Second List"
     }
   ]
 }

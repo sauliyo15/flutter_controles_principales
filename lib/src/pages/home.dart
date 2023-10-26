@@ -38,6 +38,7 @@ class Home extends StatelessWidget {
     optListMenu.forEach((element) {
       final widgetvalue = ListTile(
         title: Text(element['texto'].toString()),
+        subtitle: Text('Acceso a la pantalla de ${element['texto']}'),
         //Llamada al metodo de la clase utils_function.dart para obtener que icono se requiere
         leading: getIcon(element['icon']),
         trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
