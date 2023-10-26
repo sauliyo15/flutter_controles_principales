@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_fields, avoid_function_literals_in_foreach_calls
+
 import 'package:flutter/material.dart';
 
 class InputPage extends StatefulWidget {
@@ -9,7 +11,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   String _fecha = '';
-  TextEditingController _textController = new TextEditingController();
+  TextEditingController _textController = TextEditingController();
 
   String _opcionSeleccionada = 'Toyota';
   List marcas = ['Toyota', 'Audi', 'Honda', 'Seat', 'Peugeot'];
@@ -18,19 +20,19 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Input Page"),
+        title: const Text("Input Page"),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
         children: <Widget>[
           _createInput(),
-          Divider(),
+          const Divider(),
           _createInputEmail(),
-          Divider(),
+          const Divider(),
           _createInputPassword(),
-          Divider(),
+          const Divider(),
           _createInputDate(context),
-          Divider(),
+          const Divider(),
           _createDropDown(),
         ],
       ),
@@ -47,8 +49,8 @@ class _InputPageState extends State<InputPage> {
           hintText: 'Escriba su nombre aquí',
           labelText: 'Nombre',
           helperText: 'Escriba solo su nombre',
-          suffixIcon: Icon(Icons.accessibility),
-          icon: Icon(Icons.account_circle)),
+          suffixIcon: const Icon(Icons.accessibility),
+          icon: const Icon(Icons.account_circle)),
     );
   }
 
@@ -62,8 +64,8 @@ class _InputPageState extends State<InputPage> {
           hintText: 'Escriba su email aquí',
           labelText: 'Email',
           helperText: 'Escriba solo su email',
-          suffixIcon: Icon(Icons.alternate_email),
-          icon: Icon(Icons.email)),
+          suffixIcon: const Icon(Icons.alternate_email),
+          icon: const Icon(Icons.email)),
     );
   }
 
@@ -77,8 +79,8 @@ class _InputPageState extends State<InputPage> {
           hintText: 'Escriba su contraseña',
           labelText: 'Contraseña',
           helperText: 'Escriba solo su contraseña',
-          suffixIcon: Icon(Icons.lock_open),
-          icon: Icon(Icons.lock)),
+          suffixIcon: const Icon(Icons.lock_open),
+          icon: const Icon(Icons.lock)),
     );
   }
 
@@ -93,10 +95,10 @@ class _InputPageState extends State<InputPage> {
           hintText: 'Escriba su fecha de nacimiento',
           labelText: 'Fecha de nacimiento',
           helperText: 'Escriba solo su fecha de nacimiento',
-          suffixIcon: Icon(Icons.perm_contact_calendar),
-          icon: Icon(Icons.calendar_today)),
+          suffixIcon: const Icon(Icons.perm_contact_calendar),
+          icon: const Icon(Icons.calendar_today)),
       onTap: () {
-        FocusScope.of(context).requestFocus(new FocusNode());
+        FocusScope.of(context).requestFocus(FocusNode());
         _selecDate(context);
       },
     );
@@ -121,8 +123,8 @@ class _InputPageState extends State<InputPage> {
   Widget _createDropDown() {
     return Row(
       children: <Widget>[
-        Icon(Icons.select_all),
-        SizedBox(
+        const Icon(Icons.select_all),
+        const SizedBox(
           width: 30.0,
         ),
         Expanded(
@@ -143,8 +145,8 @@ class _InputPageState extends State<InputPage> {
     List<DropdownMenuItem<String>> list = [];
     marcas.forEach((element) {
       list.add(DropdownMenuItem(
-        child: Text(element),
         value: element,
+        child: Text(element),
       ));
     });
     return list;

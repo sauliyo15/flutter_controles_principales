@@ -15,23 +15,23 @@ class _FloatingButtonState extends State<FloatingButton> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Floating Button Page"),
+        title: const Text("Floating Button Page"),
       ),
       body: Center(
         child: Text('Cuenta: $_cuenta'),
       ),
       bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
         child: Container(
           height: 50.0,
         ),
-        shape: CircularNotchedRectangle(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => setState(() {
           _cuenta++;
         }),
-        child: Icon(Icons.add),
         tooltip: 'Presiona aquí',
+        child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );

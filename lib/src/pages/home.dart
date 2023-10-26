@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Componentes de Flutter'),
+        title: Text('Componentes de Flutter principales'),
       ),
       //Llamamos al metodo _list que devolvera una lista de Widgets
       body: _list(),

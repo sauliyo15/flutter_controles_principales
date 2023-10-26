@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 
 class AlertPage extends StatelessWidget {
+  const AlertPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,9 +16,9 @@ class AlertPage extends StatelessWidget {
         onPressed: () {
           _showAlert(context);
         },
-        child: Text('Show Dialog'),
         style: ElevatedButton.styleFrom(
             primary: Colors.red, shape: StadiumBorder()),
+        child: Text('Show Dialog'),
       )),
     );
   }
@@ -27,7 +29,8 @@ class AlertPage extends StatelessWidget {
       builder: (context) {
         return AlertDialog(
           title: Text('Titulo'),
-          content: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+          content:
+              Column(mainAxisSize: MainAxisSize.min, children: const <Widget>[
             Text("Contenido de la tarjeta"),
             FlutterLogo(
               size: 100.00,

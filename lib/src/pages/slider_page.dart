@@ -14,20 +14,20 @@ class _SliderPage extends State<SliderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Slider Page'),
+        title: const Text('Slider Page'),
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 30.0),
+        padding: const EdgeInsets.only(top: 30.0),
         child: Column(
           children: <Widget>[
             _createSlider(),
-            Divider(),
+            const Divider(),
             _createImage(),
-            Divider(),
+            const Divider(),
             _createImage2(),
-            Divider(),
+            const Divider(),
             _createSwitch(),
-            Divider(),
+            const Divider(),
             _createCheck()
           ],
         ),
@@ -56,7 +56,7 @@ class _SliderPage extends State<SliderPage> {
     return Column(
       children: <Widget>[
         Image(
-          image: NetworkImage(
+          image: const NetworkImage(
               'https://images.prismic.io/carwow/951a1f9f-3783-4394-8c13-a0ce4146f7f7_A202488_medium+%281%29.jpg'),
           width: _valueSlider,
           fit: BoxFit.contain,
@@ -69,7 +69,7 @@ class _SliderPage extends State<SliderPage> {
     return Column(
       children: <Widget>[
         Image(
-          image: NetworkImage(
+          image: const NetworkImage(
               'https://www.km77.com/images/medium/9/4/9/7/med-a3-sedan-exterior.349497.jpg'),
           width: _valueSlider,
           fit: BoxFit.contain,
@@ -80,7 +80,7 @@ class _SliderPage extends State<SliderPage> {
 
   Widget _createSwitch() {
     return SwitchListTile(
-        title: Text('Bloquear Slider'),
+        title: const Text('Bloquear Slider'),
         value: _blockCheck,
         onChanged: (valor) {
           setState(() {
@@ -91,7 +91,7 @@ class _SliderPage extends State<SliderPage> {
 
   Widget _createCheck() {
     return CheckboxListTile(
-        title: Text('Bloquear Slider'),
+        title: const Text('Bloquear Slider'),
         value: _blockCheck,
         onChanged: (valor) {
           setState(() {

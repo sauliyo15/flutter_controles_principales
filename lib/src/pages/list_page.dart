@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_fields
+
 import 'package:flutter/material.dart';
 
 class ListPage extends StatefulWidget {
@@ -13,7 +15,7 @@ class _ListPage extends State<ListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('List Page'),
+        title: const Text('List Page'),
       ),
       body: _createList(),
     );
@@ -25,7 +27,7 @@ class _ListPage extends State<ListPage> {
         itemBuilder: (context, index) {
           final image = _number[index];
           return FadeInImage(
-              placeholder: AssetImage('assets/gif_loading.gif'),
+              placeholder: const AssetImage('assets/gif_loading.gif'),
               image:
                   NetworkImage('https://picsum.photos/500/300?random=$image'));
         });
