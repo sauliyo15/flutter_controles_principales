@@ -2,25 +2,24 @@
 import 'package:flutter/material.dart';
 
 //Importamos la clase para poder instanciarla
-import 'package:flutter_application_1/src/myApp.dart';
-import 'package:flutter_application_1/src/myApp2.dart';
 import 'package:flutter_application_1/src/pages/alert_page.dart';
-import 'package:flutter_application_1/src/pages/avatar_page.dart';
-import 'package:flutter_application_1/src/pages/home.dart';
-import 'package:flutter_application_1/src/pages/listview.dart';
 import 'package:flutter_application_1/src/routes/routes.dart';
 
 void main() {
   //No es necesario instanciar una clase con la palabra new (se puede omitir)
-  runApp(MyApplication());
+  runApp(const MyApplication());
 }
 
 class MyApplication extends StatelessWidget {
+  const MyApplication({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
+        //Ruta inicial de la aplicacion
         initialRoute: '/',
+        //Llamada al método de la clase routes.dart donde se obtienen todas las rutas y direccionamiento
         routes: getRoutes(),
         //Controlar rutas no definidas redireccionamos donde queramos (AlertPage)
         onGenerateRoute: (RouteSettings setting) {

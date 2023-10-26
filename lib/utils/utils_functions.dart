@@ -6,7 +6,8 @@ final _setIcons = <String, IconData>{
   "folder_open": Icons.folder_open,
   "input": Icons.input,
   "tune": Icons.tune,
-  "list": Icons.list
+  "list": Icons.list,
+  "floating": Icons.flash_auto,
 };
 
 Icon getIcon(String nameIcon) {
