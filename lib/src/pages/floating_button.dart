@@ -1,24 +1,39 @@
 //Importar el paquete de flutter
 import 'package:flutter/material.dart';
 
-class FloatingButton extends StatelessWidget {
+class FloatingButton extends StatefulWidget {
+  const FloatingButton({super.key});
+
+  @override
+  State<FloatingButton> createState() => _FloatingButtonState();
+}
+
+class _FloatingButtonState extends State<FloatingButton> {
+  int _cuenta = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Boton Flotante'),
+      appBar: AppBar(
+        title: Text("Floating Button Page"),
+      ),
+      body: Center(
+        child: Text('Cuenta: $_cuenta'),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          height: 50.0,
         ),
-        body: Center(child: Text('HOLA')),
-        backgroundColor: Colors.blueGrey.shade200,
-        floatingActionButton: FloatingActionButton(
-          onPressed:
-              setMessage, //Llamar al metodo sin parentesis para que no se ejecute inicialmente
-          child: const Icon(Icons.add),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat);
-  }
-
-  setMessage() {
-    print('HOLA');
+        shape: CircularNotchedRectangle(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => setState(() {
+          _cuenta++;
+        }),
+        child: Icon(Icons.add),
+        tooltip: 'Presiona aquí',
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    );
   }
 }

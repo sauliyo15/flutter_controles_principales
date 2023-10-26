@@ -8,6 +8,7 @@ final _setIcons = <String, IconData>{
   "tune": Icons.tune,
   "list": Icons.list,
   "floating": Icons.flash_auto,
+  "second_list": Icons.list_alt_rounded,
 };
 
 Icon getIcon(String nameIcon) {
