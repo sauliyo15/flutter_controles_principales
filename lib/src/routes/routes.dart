@@ -7,6 +7,7 @@ import '../pages/alert_page.dart';
 import '../pages/avatar_page.dart';
 import '../pages/card_page.dart';
 import '../pages/input_page.dart';
+import '../pages/share_preferences.dart';
 import '../pages/slider_page.dart';
 import '../pages/list_page.dart';
 import '../pages/floating_button.dart';
@@ -22,5 +23,6 @@ Map<String, WidgetBuilder> getRoutes() {
     'slider': (BuildContext context) => SliderPage(),
     'list': (BuildContext context) => ListPage(),
     'floating_button': (BuildContext context) => FloatingButton(),
+    'share_preferences': (BuildContext context) => SharePreferences()
   };
 }
